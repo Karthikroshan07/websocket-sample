@@ -7,8 +7,13 @@ function connect() {
 		console.log('Connected: ' + frame);
 		stompClient.subscribe('/topic/sample', function(userData) {
 			var userData = JSON.parse(userData.body);
-			document.getElementById("user-name").value = userData.userName;
-			document.getElementById("user-id").value = userData.userId;
+//			document.getElementById("user-name").value = userData.userName;
+			for (var i = 0; i < userData.length; i++) {
+				if (userData[i].userName == document.getElementById("user-name").value) {
+					document.getElementById("user-id").value = userData[i].message;
+					break;
+				}
+			}
 		});
 	});
 }

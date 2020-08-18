@@ -17,18 +17,21 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping("/user")
-	public String loadScreen(Model model) {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		userService.saveCurrentUser(auth.getName());
+	@RequestMapping("/sendMessage")
+	public String sendMessage(Model model) {
 		model.addAttribute(new UserEntity());
-		return "home";
+		return "send-message";
 	}
 
+	@RequestMapping("/viewMessage") 
+	public String viewMessage(@ModelAttribute("userEntity") UserEntity user) {
+		return "view-message";
+	}
+	
 	@RequestMapping("/update") 
 	public String updateData(@ModelAttribute("userEntity") UserEntity user) {
 		userService.saveData(user);
-		return "home";
+		return "send-message";
 	}
-
+	
 }

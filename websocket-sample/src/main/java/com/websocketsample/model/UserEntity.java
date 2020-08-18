@@ -16,16 +16,16 @@ public class UserEntity {
 	@Column(name = "user_name")
 	private String userName;
 	
-	@Column(name = "user_id")
-	private int userId;
+	@Column(name = "message")
+	private String message;
 
 	public UserEntity() {
 		
 	}
 
-	public UserEntity(String userName, int userId) {
+	public UserEntity(String userName, String message) {
 		this.userName = userName;
-		this.userId = userId;
+		this.message = message;
 	}
 
 	public String getUserName() {
@@ -36,12 +36,12 @@ public class UserEntity {
 		this.userName = userName;
 	}
 
-	public int getUserId() {
-		return userId;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }

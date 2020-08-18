@@ -20,6 +20,6 @@ public class SchedulerConfig {
 	
 	@Scheduled(fixedDelay = 1000)
 	public void getUserId() {
-		simpMessagingTemplate.convertAndSend("/topic/sample", userService.getData(userService.getCurrentUser()));
+		simpMessagingTemplate.convertAndSend("/topic/sample", userService.getData());
 	}
 }

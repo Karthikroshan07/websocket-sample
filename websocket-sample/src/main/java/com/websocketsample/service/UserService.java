@@ -1,15 +1,13 @@
 package com.websocketsample.service;
 
+import java.util.List;
+
 import com.websocketsample.model.UserEntity;
 
 public interface UserService {
 	
 	public void saveData(UserEntity user);
 	
-	public UserEntity getData(String userName);
-
-	public void saveCurrentUser(String userName);
-
-	public String getCurrentUser();
+	public List<UserEntity> getData();
 
 }

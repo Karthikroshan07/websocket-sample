@@ -1,5 +1,7 @@
 package com.websocketsample.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,20 +24,8 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	@Transactional
-	public UserEntity getData(String userName) {
-		return userDao.getData(userName);
-	}
-
-	@Override
-	@Transactional
-	public void saveCurrentUser(String userName) {
-		userDao.saveCurrentUser(userName);
-	}
-
-	@Override
-	@Transactional
-	public String getCurrentUser() {
-		return userDao.getCurrentUser();
+	public List<UserEntity> getData() {
+		return userDao.getData();
 	}
 
 }
